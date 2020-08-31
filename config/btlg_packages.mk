@@ -1,19 +1,11 @@
 # Our Bootleg apps
 PRODUCT_PACKAGES += \
-    Email \
-    Etar \
-    QPGallery \
-    MiXplorerPrebuilt \
     WallpaperPicker2 \
     MarkupGugel \
-    GugelClock \
-    ShishuWalls \
-    Jelly \
     LatinIME \
     OmniStyle \
     OmniJaws \
     ShishufiedHeaders \
-    Phonograph \
     ThemePicker
 
 ifeq ($(BOOTLEGGERS_BUILD_TYPE),Shishufied)
@@ -21,22 +13,8 @@ ifeq ($(BOOTLEGGERS_BUILD_TYPE),Shishufied)
         ShishuOTA
 endif
 
-# Launcher Selection just in case
-# Please, prepare for reports
-ifeq ($(BOOTLEGGERS_SITDOWN),true)
-    PRODUCT_PACKAGES += \
-        Lawnchair
-
-PRODUCT_COPY_FILES += \
-    vendor/bootleggers/prebuilt/lawnchair/etc/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lawnchair.xml \
-    vendor/bootleggers/prebuilt/lawnchair/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
-
-    DEVICE_PACKAGE_OVERLAYS += \
-        vendor/bootleggers/overlay/lawnchair
-else
-    PRODUCT_PACKAGES += \
-        Launcher3QuickStep
-endif
+PRODUCT_PACKAGES += \
+    Launcher3QuickStep
 
 # Long Screenshot
 PRODUCT_PACKAGES += \
@@ -52,7 +30,6 @@ PRODUCT_PACKAGES += \
 
 # Call the overlays folder to build all the rest
 include packages/overlays/Shishufied/shishu.mk
-include packages/apps/Plugins/plugins.mk
 
 # Include Potato volume panels
 include packages/modules/PotatoPlugins/plugins.mk
