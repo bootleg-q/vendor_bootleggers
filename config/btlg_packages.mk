@@ -12,6 +12,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     OmniStyle \
     OmniJaws \
+    ShishufiedHeaders \
     Phonograph \
     ThemePicker
 
@@ -52,6 +53,9 @@ PRODUCT_PACKAGES += \
 # Call the overlays folder to build all the rest
 include packages/overlays/Shishufied/shishu.mk
 include packages/apps/Plugins/plugins.mk
+
+# Include Potato volume panels
+include packages/modules/PotatoPlugins/plugins.mk
 
 ### COMMENTED WASTELAND - MOVED TEMPORALLY HERE DUE TO WIP ###
 #
